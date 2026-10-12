@@ -1,209 +1,103 @@
 <html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>Startalk</title>
-            <link href=""https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-            <style>
-                *{margin:0;padding:0;box-sizing:border-box}
-                html,body{height:100%}
-                body{
-                      background-color:#03020a;
-                      color:#e8e6ff;
-                      font-family:"Space Mono",monospace;
-                      min-height:100vh;
-                      padding:60px 24px;
-                      display:flex;
-                      justify-content:center;
-                      overflow-x:hidden;
-                      position:relative;
-                      }
-                      .hole{
-                            position:fixed;
-                            top:50%;left:50%;
-                            width:140vmin;height:140vmin;
-                            transform:translate(-50%,-50%);
-                            pointer-events:none;
-                            z-index:0;
-                            }
-                            .hole::before{
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>StarTalk</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+background:#03020a url("gargantua.jpg") no-repeat center center fixed;
+  background-size:cover;
+color:#e5e3f0;
+font-family:Verdana,Geneva,sans-serif;
+min-height:100vh;
+  padding:50px 20px;
+}
+body::before{
 content:"";
-position:absolute;
-inset:0;
-border-radius:50%;
-background:conic-gradient(
-from 0deg,
-transparent 0%,
-#ff5a1f 8%,
-#ffb347 14%,
-#fff2c4 18%,
-#ffb347 22%,
-#ff5a1f 28%,
-transparent 38%,
-transparent 62%,
-#b47aff 68%,
-#6affb0 74%,
-#b47aff 80%,
-transparent 90%
-);
-filter:blur(40px);
-opacity:.55;
-animation:turn 40s linear infinite;
-}
-.hole::after{
-content:"";
-position:absolute;
-top:50%;left:50%;
-width:34vmin;height:34vmin;
-transform:translate(-50%,-50%);
-border-radius:50%;
-background:radial-gradient(circle,
-#000 0%,
-#000 55%,
-#1a0a2e 58%,
-#ffb347 62%,
-#fff2c4 64%,
-#ffb347 66%,
-rgba(180,122,255,.6) 70%,
-transparent 78%
-);
-filter:blur(6px);
-animation:throb 6s ease-in-out infinite;
-}
-.hole-middle{
-position:absolute;
-top:50%;left:50%;
-width:26vmin;height:26vmin;
-transform:translate(-50%,-50%);
-border-radius:50%;
-background:#000;
-box-shadow:
-0 0 80px 20px rgba(0,0,0,1),
-0 0 160px 60px rgba(0,0,0,.9),
-inset 0 0 40px 10px #000;
-z-index:1;
-}
-@keyframes turn{to{transform:rotate(360deg)}}
-@keyframes throb{
-0%,100%{opacity:.85;transform:translate(-50%,-50%) scale(1)}
-50%{opacity:1;transform:translate(-50%,-50%) scale(1.06)}
+position:fixed;inset:0;
+background:rgba(3,2,10,.55);
+  pointer-events:none;
+z-index:0;
 }
 .wrap{
-position:relative;
-z-index:2;
-max-width:780px;
-width:100%;
-margin:auto;
+position:relative;z-index:2;
+max-width:760px;
+  margin:0 auto;
 }
+
 .top{
-display:flex;
-align-items:center;
-gap:10px;
-margin-bottom:28px;
-letter-spacing:4px;
-font-size:.8rem;
-color:#9a8fff;
+display:flex;align-items:center;gap:8px;
+font-size:13px;color:#b0a8ff;
+letter-spacing:2px;
 text-transform:uppercase;
-text-shadow:0 0 20px rgba(154,143,255,.6);
+  margin-bottom:18px;
 }
 .blip{
-width:8px;height:8px;
-border-radius:50%;
-background:#6affb0;
-box-shadow:0 0 12px #6affb0;
-animation:flash 1.6s ease-in-out infinite;
+width:8px;height:8px;background:#6fe6a5;border-radius:50%;
+box-shadow:0 0 8px #6fe6a5;
+animation:blink 1.8s ease-in-out infinite;
 }
 .pulse-line{
 height:2px;
-width:100%;
-margin-bottom:34px;
-background:linear-gradient(90deg,transparent,#6affb0,#b47aff,transparent);
+background:linear-gradient(90deg,transparent,#6fe6a5,#b0a8ff,transparent);
 background-size:200% 100%;
+  margin-bottom:24px;
 animation:slide 3s linear infinite;
+border-radius:2px;
 }
 .panel{
-background:rgba(8,6,18,.55);
-backdrop-filter:blur(20px);
--webkit-backdrop-filter:blur(20px);
-border:1px solid rgba(180,122,255,.15);
-border-radius:20px;
-padding:32px 28px;
-box-shadow:0 20px 80px rgba(0,0,0,.6);
+background:rgba(15,12,24,.7);
+border:1px solid rgba(176,168,255,.2);
+border-radius:10px;
+  padding:24px 22px;
+box-shadow:0 10px 30px rgba(0,0,0,.5);
 }
 h1{
-font-size:clamp(1.6rem,4vw,2.4rem);
-font-weight:700;
-line-height:1.2;
-margin-bottom:8px;
-color:#fff;
-text-shadow:0 0 30px rgba(180,122,255,.5);
+font-family:Georgia,serif;
+font-size:22px;font-weight:bold;line-height:1.3;
+margin-bottom:6px;
+  color:#fff;
 }
-                     .day{
-                          font-size:.75rem;
-                          color:#6affb0;
-                          letter-spacing:2px;
-                          margin-bottom:24px;
-                          text-transform:uppercase;
-                          }
+.day{
+font-size:11px;color:#6fe6a5;letter-spacing:1px;
+  margin-bottom:18px;text-transform:uppercase;
+}
 img,video{
-width:100%;
-border-radius:14px;
-display:block;
-margin-bottom:24px;
-box-shadow:0 0 60px rgba(140,90,255,.35);
-border:1px solid rgba(180,122,255,.25);
+width:100%;display:block;margin-bottom:18px;
+border-radius:8px;
+  border:1px solid rgba(176,168,255,.2);
 }
 .blurb{
-font-size:.95rem;
-line-height:1.8;
-color:#b9b6d8;
+font-size:14px;line-height:1.65;
+color:#c3bfd6;
 }
 .msg{
-text-align:center;
-padding:60px 20px;
-color:#6affb0;
-letter-spacing:2px;
-font-size:.9rem;
+text-align:center;padding:50px 15px;
+color:#6fe6a5;font-size:13px;letter-spacing:1px;
 }
-.msg.bad{color:#ff7a9a}
+.msg.bad{color:#ff8fa0}
 footer{
-margin-top:32px;
-font-size:.7rem;
-color:#6a6787;
-text-align:center;
-letter-spacing:1px;
+margin-top:22px;font-size:11px;color:#7a7590;
+  text-align:center;letter-spacing:.5px;
 }
-footer a{color:#9a8fff;text-decoration:none}
-@keyframes flash{
-0%,100%{opacity:1}
-50%{opacity:.25}
-}
+footer a{color:#b0a8ff;text-decoration:none}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 @keyframes slide{
 0%{background-position:200% 0}
 100%{background-position:-200% 0}
 }
-@keyframes pop{
-from{opacity:0;transform:translateY(10px)}
-to{opacity:1;transform:translateY(0)}
-}
-.pop-in{animation:pop .6s ease-out}
 @media (max-width:600px){
-.hole{width:180vmin;height:180vmin}
-.hole::before{filter:blur(60px)}
-.panel{padding:24px 20px}
+body{padding:30px 14px;background-attachment:scroll}
+  .panel{padding:18px 16px}
 }
 </style>
 </head>
 <body>
-<div class="hole">
-<div class="hole-middle"></div>
-</div>
+
 <div class="wrap">
-<div class="top">
-<span class="blip"></span>
-<span>StarTalk</span>
-</div>
+<div class="top"><span class="blip"></span>StarTalk</div>
 <div class="pulse-line"></div>
 <div class="panel">
 <div id="app"></div>
@@ -213,53 +107,55 @@ powered by NASA's APOD · built for
 <a href="https://stardance.hackclub.com" target="_blank">Stardance</a>
 </footer>
 </div>
+
 <script>
 const app = document.getElementById("app");
-const NASA_URL = "https://api.nasa.gov/planetary/apod";
-const NASA_KEY = "DEMO_KEY";
+const url = "https://api.nasa.gov/planetary/apod";
+const key = "DEMO_KEY";
 
-async function fetchPic(triesLeft = 2){
-  app.innerHTML = `<div class="msg">✦ tuning into the cosmos...</div>`;
+async function load(tries){
+ tries = tries || 2;
+ app.innerHTML = '<div class="msg">loading today\'s picture...</div>';
 
   try{
-    const r = await fetch(`${NASA_URL}?api_key=${NASA_KEY}`);
+   const r = await fetch(url + "?api_key=" + key);
 
-    if(r.status === 429){
-      app.innerHTML = `<div class="msg bad">too many requests · wait a minute and refresh</div>`;
-      return;
-    }
+   if(r.status === 429){
+    app.innerHTML = '<div class="msg bad">too many requests, give it a minute</div>';
+    return;
+   }
 
-    if(r.status >= 500 && triesLeft > 1){
-      await new Promise(res => setTimeout(res, 1500));
-      return fetchPic(triesLeft - 1);
-    }
+   if(r.status >= 500 && tries > 1){
+     await new Promise(x => setTimeout(x,1500));
+     return load(tries - 1);
+   }
 
-    if(!r.ok) throw new Error(`nasa said ${r.status}`);
+   if(!r.ok) throw new Error("nasa said " + r.status);
 
-    const info = await r.json();
-    showPic(info);
+   const d = await r.json();
+   draw(d);
 
   }catch(e){
-    app.innerHTML = `<div class="msg bad">couldn't load · ${e.message}</div>`;
+   app.innerHTML = '<div class="msg bad">couldn\'t load. ' + e.message + '</div>';
   }
 }
 
-function showPic(info){
-  const thing = info.media_type === "video"
-    ? `<video src="${info.url}" controls></video>`
-    : `<img src="${info.url}" alt="${info.title}">`;
-
-  app.innerHTML = `
-    <div class="pop-in">
-      <h1>${info.title}</h1>
-      <div class="day">${info.date}</div>
-      ${thing}
-      <p class="blurb">${info.explanation}</p>
-    </div>
-  `;
+function draw(d){
+var media;
+if(d.media_type === "video"){
+ media = '<video src="' + d.url + '" controls></video>';
+}else{
+ media = '<img src="' + d.url + '" alt="' + d.title + '">';
 }
 
-fetchPic();
+app.innerHTML =
+ '<h1>' + d.title + '</h1>' +
+ '<div class="day">' + d.date + '</div>' +
+ media +
+ '<p class="blurb">' + d.explanation + '</p>';
+}
+
+load();
 </script>
 </body>
 </html>
