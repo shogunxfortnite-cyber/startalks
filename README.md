@@ -1,20 +1,20 @@
 # startalks
-1This is a website which steals data from NASA.
+>This is a website which steals data from NASA.
 
-2This also has a cool black hole animation.
+>This also has a cool black hole animation.
 
 ## Working
-1This website connects to NASAs demo key and displays daily content.
+>This website connects to NASAs demo key and displays daily content.
 
 ## WARNING
-1This website uses a demo key from NASA it can handle only 50 request a day per IP address.
+>This website uses a demo key from NASA it can handle only 50 request a day per IP address.
 
-2So you can view this website only 2 or 3 times a day.
+>So you can view this website only 2 or 3 times a day.
 
 ## Bug fixes
-1Error 403
+>Error 403
 
-2Error 500 is from NASA side if it appears refresh and try again.
+>Error 500 is from NASA side if it appears refresh and try again. It might take many refreshes.
 
 ## Built for stardance
 find the project listed on stardance
